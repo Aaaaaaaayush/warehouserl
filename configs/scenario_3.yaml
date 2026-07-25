@@ -1,0 +1,130 @@
+# ============================================================
+# Scenario 3 — Full Warehouse
+# Challenge: Maximum complexity. 12 agents, 16x16 grid,
+#             dynamic item spawning, randomised obstacle
+#             layouts per episode. Role specialisation and
+#             convoy behavior should emerge under this
+#             pressure. Weights transferred from Scenario 2.
+# ============================================================
+
+scenario:
+  id: 3
+  name: "Full Warehouse"
+  description: >
+    Twelve agents in a 16x16 grid. Obstacle layouts are
+    randomised each episode — fixed strategies fail, adaptive
+    coordination is required. Dynamic item spawning means
+    agents must continuously reassign targets. Four dispatch
+    points create complex routing decisions.
+
+# --- Grid ---
+grid:
+  width: 16
+  height: 16
+  shelves:
+    # Fixed shelf zones (corners) — obstacles fill centre randomly
+    - [1, 1]
+    - [1, 2]
+    - [1, 3]
+    - [2, 1]
+    - [2, 2]
+    - [2, 3]
+    - [1, 11]
+    - [1, 12]
+    - [1, 13]
+    - [2, 11]
+    - [2, 12]
+    - [2, 13]
+    - [13, 1]
+    - [13, 2]
+    - [13, 3]
+    - [14, 1]
+    - [14, 2]
+    - [14, 3]
+    - [13, 11]
+    - [13, 12]
+    - [13, 13]
+    - [14, 11]
+    - [14, 12]
+    - [14, 13]
+  dispatch_points:
+    - [7, 15]
+    - [8, 15]
+    - [7, 0]
+    - [8, 0]
+  charging_stations:
+    - [0, 15]
+    - [15, 15]
+    - [0, 0]
+    - [15, 0]
+    - [0, 7]
+    - [15, 7]
+  obstacles:
+    # Base obstacles — additional ones are randomised per episode
+    # in warehouse_env.py using the random_obstacle settings below
+    - [7, 7]
+    - [7, 8]
+    - [8, 7]
+    - [8, 8]
+  agent_start_positions:
+    - [7, 5]
+    - [8, 5]
+    - [7, 10]
+    - [8, 10]
+    - [5, 7]
+    - [5, 8]
+    - [10, 7]
+    - [10, 8]
+    - [6, 6]
+    - [9, 6]
+    - [6, 9]
+    - [9, 9]
+
+# --- Random obstacles (Scenario 3 only) ---
+randomisation:
+  enabled: true
+  extra_obstacle_count: 8        # N random obstacles added each episode reset
+  obstacle_exclusion_zones:      # Never place random obstacles here
+    - "shelves"
+    - "dispatch_points"
+    - "charging_stations"
+    - "agent_start_positions"
+
+# --- Agents ---
+agents:
+  count: 12
+  observation_radius: 2
+  battery_capacity: 70
+  battery_depletion_per_step: 1
+  battery_charge_per_step: 5
+
+# --- Items ---
+items:
+  spawn_rate: 0.08               # Higher spawn rate = more urgency
+  max_items_on_shelf: 5
+
+# --- Training ---
+training:
+  total_episodes: 500_000
+  max_steps_per_episode: 400
+  eval_interval: 1_000
+  checkpoint_interval: 50_000
+  weight_init: "scenario_2"     # Transfer weights from Scenario 2 checkpoint
+
+# --- Rewards ---
+rewards:
+  delivery_reward: 10.0
+  pick_up_reward: 1.0
+  collision_penalty: -2.0
+  step_penalty: -0.01
+  battery_empty_penalty: -5.0
+  charge_reward: 0.5
+  dispatch_balance_bonus: 0.3
+  # Scenario 3 addition: small bonus for agents maintaining distance from
+  # each other while moving — discourages clustering, encourages spread.
+  spacing_bonus: 0.1
+  # Scenario 3 addition: throughput bonus for delivering N packages in
+  # M consecutive steps — rewards sustained high performance, not lucky bursts.
+  throughput_streak_bonus: 2.0
+  throughput_streak_window: 20   # Steps over which streak is measured
+  throughput_streak_threshold: 3 # Deliveries needed within window

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WarehouseRL — Cooperative MARL | QMIX | PettingZoo | RTX 5080</title>
+  <meta name="description" content="Production-grade cooperative multi-agent reinforcement learning system. Autonomous robots coordinate package throughput using QMIX across 900,000 training episodes." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Design system CSS (load order matters) -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <!-- Plotly for training charts -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+
+  <!-- ── Sidebar navigation ──────────────────────────────────────── -->
+  <nav id="sidebar" role="navigation" aria-label="Main navigation">
+    <div id="sidebar-logo">
+      <span class="logo-mark">W</span>
+      <span class="logo-text">WarehouseRL</span>
+    </div>
+    <ul id="nav-list" role="list">
+      <li><a href="#" class="nav-item active" data-panel="overview"   id="nav-overview">Overview</a></li>
+      <li><a href="#" class="nav-item"         data-panel="scenarios"  id="nav-scenarios">Scenarios</a></li>
+      <li><a href="#" class="nav-item"         data-panel="warehouse"  id="nav-warehouse">Warehouse</a></li>
+      <li><a href="#" class="nav-item"         data-panel="training"   id="nav-training">Training</a></li>
+      <li><a href="#" class="nav-item"         data-panel="behaviors"  id="nav-behaviors">Behaviors</a></li>
+      <li><a href="#" class="nav-item"         data-panel="architecture" id="nav-architecture">Architecture</a></li>
+      <li><a href="#" class="nav-item"         data-panel="research"   id="nav-research">Research</a></li>
+      <li><a href="#" class="nav-item locked"  data-panel="v2preview"  id="nav-v2preview">V2 Preview 🔒</a></li>
+    </ul>
+    <div id="sidebar-footer">
+      <span class="version-badge">v1.0</span>
+      <span class="footer-label">QMIX · 900K eps</span>
+    </div>
+  </nav>
+
+  <!-- ── Top bar ─────────────────────────────────────────────────── -->
+  <header id="topbar" role="banner">
+    <span id="topbar-breadcrumb">Overview</span>
+    <div id="topbar-meta">
+      <span class="meta-chip">RTX 5080</span>
+      <span class="meta-chip">CUDA 12.8</span>
+      <span class="meta-chip">PettingZoo</span>
+    </div>
+  </header>
+
+  <!-- ── Main panel (swapped by router.js) ──────────────────────── -->
+  <main id="main-panel" role="main" aria-live="polite">
+    <!-- Panels injected here by router.js -->
+    <div id="panel-loading" class="panel-loading">
+      <span class="loading-dot"></span>
+      <span class="loading-dot"></span>
+      <span class="loading-dot"></span>
+    </div>
+  </main>
+
+  <!-- ── Core JS (load order: state → api → router → panels) ────── -->
+  <script type="module" src="js/core/state.js"></script>
+  <script type="module" src="js/core/api.js"></script>
+  <script type="module" src="js/core/router.js"></script>
+
+</body>
+</html>

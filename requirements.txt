@@ -1,0 +1,41 @@
+# ============================================================
+# WarehouseRL — Python Dependencies
+# PyTorch 2.10.0+cu128 must be installed manually (see below).
+# All other packages are pip-installable from this file.
+#
+# INSTALL ORDER:
+#   1. python -m venv .venv_wrl
+#   2. .venv_wrl\Scripts\activate
+#   3. pip install torch==2.10.0+cu128 --index-url https://download.pytorch.org/whl/cu128
+#   4. pip install -r requirements.txt
+# ============================================================
+
+# ── Environment ────────────────────────────────────────────
+pettingzoo>=1.24.3
+gymnasium>=0.29.1
+numpy>=1.26.4
+
+# ── YAML config loading ─────────────────────────────────────
+pyyaml>=6.0.2
+
+# ── Training & logging ─────────────────────────────────────
+mlflow>=2.14.0
+tqdm>=4.66.0
+
+# ── Video rendering ─────────────────────────────────────────
+pygame>=2.6.0
+imageio>=2.34.0
+imageio-ffmpeg>=0.5.1
+opencv-python-headless>=4.10.0
+
+# ── API serving ─────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+
+# ── Scientific computing (behavior detection, heatmaps) ────
+scipy>=1.13.0
+matplotlib>=3.9.0
+
+# ── Testing ─────────────────────────────────────────────────
+pytest>=8.2.0
+pytest-asyncio>=0.23.0

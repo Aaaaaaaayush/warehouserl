@@ -1,0 +1,106 @@
+# ============================================================
+# Scenario 2 — Open Warehouse
+# Challenge: Traffic management across a larger grid with
+#             shelf obstacle clusters forcing agents to plan
+#             routes around physical barriers. Weights
+#             transferred from Scenario 1.
+# ============================================================
+
+scenario:
+  id: 2
+  name: "Open Warehouse"
+  description: >
+    Eight agents in a 12x12 grid with shelf clusters forming
+    natural corridors. Two dispatch points require agents to
+    decide dynamically which target to route to. Lane
+    formation and turn-taking at bottlenecks should emerge.
+
+# --- Grid ---
+grid:
+  width: 12
+  height: 12
+  shelves:
+    # Cluster A (top-left block)
+    - [1, 1]
+    - [1, 2]
+    - [2, 1]
+    - [2, 2]
+    - [3, 1]
+    - [3, 2]
+    # Cluster B (top-right block)
+    - [1, 8]
+    - [1, 9]
+    - [2, 8]
+    - [2, 9]
+    - [3, 8]
+    - [3, 9]
+    # Cluster C (bottom-left block)
+    - [8, 1]
+    - [8, 2]
+    - [9, 1]
+    - [9, 2]
+    - [10, 1]
+    - [10, 2]
+    # Cluster D (bottom-right block)
+    - [8, 8]
+    - [8, 9]
+    - [9, 8]
+    - [9, 9]
+    - [10, 8]
+    - [10, 9]
+  dispatch_points:
+    - [5, 11]
+    - [6, 11]
+  charging_stations:
+    - [0, 11]
+    - [11, 11]
+    - [0, 0]
+    - [11, 0]
+  obstacles:
+    # Central pillar — forces agents to route around it
+    - [5, 5]
+    - [5, 6]
+    - [6, 5]
+    - [6, 6]
+  agent_start_positions:
+    - [5, 0]
+    - [6, 0]
+    - [5, 1]
+    - [6, 1]
+    - [4, 0]
+    - [7, 0]
+    - [4, 1]
+    - [7, 1]
+
+# --- Agents ---
+agents:
+  count: 8
+  observation_radius: 2
+  battery_capacity: 60
+  battery_depletion_per_step: 1
+  battery_charge_per_step: 5
+
+# --- Items ---
+items:
+  spawn_rate: 0.06
+  max_items_on_shelf: 3
+
+# --- Training ---
+training:
+  total_episodes: 300_000
+  max_steps_per_episode: 300
+  eval_interval: 1_000
+  checkpoint_interval: 50_000
+  weight_init: "scenario_1"     # Transfer weights from Scenario 1 checkpoint
+
+# --- Rewards ---
+rewards:
+  delivery_reward: 10.0
+  pick_up_reward: 1.0
+  collision_penalty: -2.0
+  step_penalty: -0.01
+  battery_empty_penalty: -5.0
+  charge_reward: 0.5
+  # Scenario 2 addition: small bonus for routing to the less-busy dispatch
+  # point, measured by queue depth. Prevents all agents swarming one target.
+  dispatch_balance_bonus: 0.3

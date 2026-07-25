@@ -1,0 +1,78 @@
+/* ============================================================
+   tokens.css — Design System Tokens
+   All visual constants live here. Nothing else imports colour
+   or spacing values directly — they reference these variables.
+   Changing a value here updates the entire UI consistently.
+   ============================================================ */
+
+:root {
+  /* ── Colours ──────────────────────────────────────────────── */
+  --color-bg:       #04070f;   /* Page background — near-black */
+  --color-surface:  #0a1628;   /* Card / panel surfaces */
+  --color-border:   #1a2d4a;   /* Borders, dividers */
+  --color-accent:   #0066ff;   /* Primary interactive accent */
+  --color-data:     #e8edf5;   /* Primary text / data readout */
+  --color-muted:    #4a6080;   /* Secondary text, labels */
+  --color-success:  #00cc88;   /* Positive state (delivery, charging) */
+  --color-warning:  #ffaa00;   /* Caution state (low battery, items) */
+  --color-danger:   #ff3355;   /* Error state (collision, frozen) */
+
+  /* Derived semi-transparent tints */
+  --color-accent-10:   rgba(0,  102, 255, 0.10);
+  --color-success-10:  rgba(0,  204, 136, 0.10);
+  --color-warning-10:  rgba(255,170,   0, 0.10);
+  --color-danger-10:   rgba(255, 51,  85, 0.10);
+
+  /* ── Typography ───────────────────────────────────────────── */
+  --font-ui:    'Inter', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', monospace;
+
+  --text-xs:    0.6875rem;   /* 11px */
+  --text-sm:    0.75rem;     /* 12px */
+  --text-base:  0.875rem;    /* 14px */
+  --text-lg:    1rem;        /* 16px */
+  --text-xl:    1.125rem;    /* 18px */
+  --text-2xl:   1.5rem;      /* 24px */
+  --text-3xl:   2rem;        /* 32px */
+  --text-hero:  4rem;        /* 64px — overview hero metric */
+
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:  1.2;
+  --leading-normal: 1.5;
+  --leading-loose:  1.8;
+
+  /* ── Spacing — all multiples of 8px base ─────────────────── */
+  --space-base:  8px;
+  --space-1:     8px;
+  --space-2:    16px;
+  --space-3:    24px;
+  --space-4:    32px;
+  --space-5:    40px;
+  --space-6:    48px;
+  --space-8:    64px;
+  --space-10:   80px;
+  --space-12:   96px;
+
+  /* ── Layout ───────────────────────────────────────────────── */
+  --sidebar-w:   240px;
+  --topbar-h:    48px;
+
+  /* ── Radii ────────────────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+
+  /* ── Transitions ──────────────────────────────────────────── */
+  --transition-fast:   120ms ease;
+  --transition-normal: 240ms ease;
+  --transition-slow:   400ms ease;
+
+  /* ── Z-index scale ────────────────────────────────────────── */
+  --z-sidebar:  100;
+  --z-topbar:   90;
+  --z-modal:    200;
+}

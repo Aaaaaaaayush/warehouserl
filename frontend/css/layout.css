@@ -1,0 +1,111 @@
+/* ============================================================
+   layout.css — Structural Layout Only
+   This file defines ONLY the layout grid: sidebar, topbar,
+   and main panel positions and dimensions.
+
+   RULE: No colours, typography, or component styles here.
+         Panel CSS files must NOT override layout. All sizing
+         is driven by token variables from tokens.css.
+   ============================================================ */
+
+/* ── Global reset ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;             /* No page scroll — panels scroll internally */
+  background: var(--color-bg);
+  color: var(--color-data);
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── App shell grid ───────────────────────────────────────── */
+body {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  grid-template-rows: var(--topbar-h) 1fr;
+  grid-template-areas:
+    "sidebar topbar"
+    "sidebar main";
+}
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+#sidebar {
+  grid-area: sidebar;
+  position: fixed;              /* Stays put while main scrolls */
+  top: 0;
+  left: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  z-index: var(--z-sidebar);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Topbar ───────────────────────────────────────────────── */
+#topbar {
+  grid-area: topbar;
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-w);
+  right: 0;
+  height: var(--topbar-h);
+  z-index: var(--z-topbar);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-3);
+}
+
+/* ── Main panel ───────────────────────────────────────────── */
+#main-panel {
+  grid-area: main;
+  margin-left: var(--sidebar-w);
+  margin-top: var(--topbar-h);
+  height: calc(100vh - var(--topbar-h));
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--space-4);
+}
+
+/* ── Nav list structure ───────────────────────────────────── */
+#nav-list {
+  list-style: none;
+  flex: 1;
+  padding: var(--space-1) 0;
+  overflow-y: auto;
+}
+
+#nav-list li {
+  display: block;
+}
+
+/* ── Panel loading placeholder ────────────────────────────── */
+#panel-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  height: 100%;
+  min-height: 200px;
+}
+
+/* ── Scrollbar styling ────────────────────────────────────── */
+#main-panel::-webkit-scrollbar {
+  width: 4px;
+}
+#main-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+#main-panel::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
