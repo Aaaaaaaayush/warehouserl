@@ -447,9 +447,18 @@ class WarehouseEnv(ParallelEnv):
                     rewards[agent_id] += r_cfg.battery_empty_penalty
 
     def _spawn_items(self) -> None:
-        """Randomly place items on empty shelves at configured rate."""
+        """
+        Randomly place items on empty shelves at configured spawn rate.
+        max_items_on_shelf is a per-shelf cap — enforced by tracking how many
+        items are currently on each shelf position separately.
+        (In this grid model each shelf holds at most 1 item at a time;
+        the cap applies across the total active item count per cluster.)
+        """
         spawn_rate = self.cfg.items.spawn_rate
-        max_items = self.cfg.items.max_items_on_shelf
+        total_items = sum(self._items_on_shelves.values())
+        max_total = self.cfg.items.max_items_on_shelf * len(self._items_on_shelves)
+        if total_items >= max_total:
+            return
         for pos in self._items_on_shelves:
             if not self._items_on_shelves[pos] and random.random() < spawn_rate:
                 self._items_on_shelves[pos] = True
@@ -506,3 +515,95 @@ class WarehouseEnv(ParallelEnv):
         chosen = random.sample(candidates, min(n, len(candidates)))
         for r, c in chosen:
             self._grid[r][c] = CellType.WALL
+
+    # ── Global state (used by QMIX mixing network during training only) ───────
+
+    @property
+    def state_size(self) -> int:
+        """
+        Size of the global state vector returned by get_global_state().
+
+        Composition:
+          - Flattened grid:   H × W  integers (one CellType per cell)
+          - Per-agent state:  N × 6  floats   (row, col, battery%, carrying,
+                                               target_row, target_col)
+        Total: H*W + N*6
+
+        This property lets trainer.py and the replay buffer compute
+        state_size without importing magic constants.
+        """
+        H = self.cfg.grid.height
+        W = self.cfg.grid.width
+        N = self.cfg.agents.count
+        return H * W + N * 6
+
+    def get_global_state(self) -> np.ndarray:
+        """
+        Return the full global state vector for the QMIX mixing network.
+
+        WHY THIS EXISTS:
+          Individual agents can only see a 5×5 local window (partial obs).
+          But the QMIX mixing network — which runs only during centralised
+          TRAINING — needs the full picture to learn how to weight each
+          agent's Q-value contribution correctly.
+
+          At EXECUTION time, this method is never called. Each robot acts
+          using only its own local observation. This is the CTDE principle.
+
+        Returns
+        -------
+        np.ndarray
+            Shape (state_size,) — flat float32 vector.
+            Concatenation of:
+              [grid_flat (H*W,)] + [agent_0_state (6,)] + ... + [agent_N_state (6,)]
+        """
+        H = self.cfg.grid.height
+        W = self.cfg.grid.width
+
+        # Full grid as normalised floats (divide by max cell type value)
+        grid_flat = self._grid.flatten().astype(np.float32) / float(max(CellType))
+
+        # Per-agent state vectors — always in fixed order (possible_agents),
+        # padding terminated agents with zeros so the vector is constant-length.
+        agent_vecs = []
+        for agent_id in self.possible_agents:
+            if agent_id in self._agent_states:
+                s = self._agent_states[agent_id]
+                vec = np.array([
+                    s.row  / H,
+                    s.col  / W,
+                    s.battery / self.cfg.agents.battery_capacity,
+                    float(s.carrying),
+                    s.target_row / H if s.target_row >= 0 else -1.0,
+                    s.target_col / W if s.target_col >= 0 else -1.0,
+                ], dtype=np.float32)
+            else:
+                # Agent has been terminated — fill with zeros
+                vec = np.zeros(6, dtype=np.float32)
+            agent_vecs.append(vec)
+
+        return np.concatenate([grid_flat] + agent_vecs)  # shape: (state_size,)
+
+    def get_stats(self) -> dict:
+        """
+        Return a snapshot of the current episode's aggregate statistics.
+        Called by trainer.py after each episode to feed into MLflow.
+
+        Returns
+        -------
+        dict with keys:
+          step_count, deliveries, frozen_agents, live_agents,
+          items_available, total_battery_pct
+        """
+        total_bat = sum(
+            s.battery / self.cfg.agents.battery_capacity
+            for s in self._agent_states.values()
+        )
+        return {
+            "step_count":        self._step_count,
+            "deliveries":        len(self._delivery_history),
+            "frozen_agents":     sum(1 for s in self._agent_states.values() if s.frozen),
+            "live_agents":       len(self.agents),
+            "items_available":   sum(self._items_on_shelves.values()),
+            "total_battery_pct": total_bat / max(len(self._agent_states), 1),
+        }
