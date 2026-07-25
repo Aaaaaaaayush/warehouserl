@@ -93,6 +93,21 @@ training:
   checkpoint_interval: 50_000
   weight_init: "scenario_1"     # Transfer weights from Scenario 1 checkpoint
 
+  # QMIX hyperparameters [V2-READY]
+  batch_size: 32
+  buffer_capacity: 5_000
+  lr: 0.0005
+  gamma: 0.99
+  epsilon_start: 0.5             # Start lower — QNet weights transferred from S1
+  epsilon_min: 0.05
+  epsilon_anneal_fraction: 0.5
+  target_update_interval: 200
+  train_every_n_episodes: 1
+  gradient_clip_norm: 10.0
+  hidden_size: 64
+  embed_dim: 32
+  hypernet_embed: 64
+
 # --- Rewards ---
 rewards:
   delivery_reward: 10.0

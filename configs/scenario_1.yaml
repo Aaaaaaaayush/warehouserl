@@ -57,6 +57,21 @@ training:
   checkpoint_interval: 50_000
   weight_init: null              # First scenario, no transfer
 
+  # QMIX hyperparameters [V2-READY: tune without touching Python]
+  batch_size: 32                 # Episodes sampled per training update
+  buffer_capacity: 5_000         # Max episodes stored in replay buffer
+  lr: 0.0005                     # Adam optimiser learning rate
+  gamma: 0.99                    # Discount factor — how much future reward matters
+  epsilon_start: 1.0             # Initial exploration rate (100% random)
+  epsilon_min: 0.05              # Final exploration rate (5% random)
+  epsilon_anneal_fraction: 0.5   # Decay epsilon over first 50% of episodes
+  target_update_interval: 200    # Episodes between target network syncs
+  train_every_n_episodes: 1      # Run one update per N episodes
+  gradient_clip_norm: 10.0       # Max gradient norm (prevents exploding gradients)
+  hidden_size: 64                # GRU and FC hidden dim for QNetwork
+  embed_dim: 32                  # Mixing network inner dimension
+  hypernet_embed: 64             # Hypernetwork hidden dimension
+
 # --- Rewards (all weights stored here, never in Python) ---
 rewards:
   delivery_reward: 10.0          # +10 per package delivered to dispatch
