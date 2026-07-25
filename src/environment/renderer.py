@@ -55,7 +55,7 @@ _COLORS = {
 }
 
 CELL_PX = 32           # Each grid cell renders at 32×32 pixels
-INFO_PANEL_W = 200     # Right-side info panel width in pixels
+INFO_PANEL_W = 192     # Right-side info panel width in pixels (divisible by 16)
 
 
 def render_frame(
