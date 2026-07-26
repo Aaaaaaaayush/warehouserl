@@ -82,16 +82,16 @@ export async function render() {
             <span style="font-family: var(--font-mono); color: var(--color-success); font-weight: bold;">WHAT WE REPLICATED:</span>
             <ul style="color: var(--color-muted); margin-top: 4px; padding-left: 16px; line-height: 1.6;">
               <li>Parallel API standard for simultaneous agent step execution.</li>
-              <li>Strict PettingZoo environment contract compliance (`reset`, `step`, `action_space`, `observation_space`).</li>
+              <li>Strict PettingZoo environment contract compliance (<code>reset</code>, <code>step</code>, <code>action_space</code>, <code>observation_space</code>).</li>
             </ul>
           </div>
 
           <div>
             <span style="font-family: var(--font-mono); color: var(--color-accent); font-weight: bold;">WHAT WE EXTENDED:</span>
             <ul style="color: var(--color-muted); margin-top: 4px; padding-left: 16px; line-height: 1.6;">
-              <li>Built a ground-up custom warehouse logistics grid environment (`WarehouseEnv`).</li>
+              <li>Built a ground-up custom warehouse logistics grid environment (<code>WarehouseEnv</code>).</li>
               <li>Integrated hard resource depletion (battery capacity & charging points).</li>
-              <li>Added `get_global_state()` method tailored for CTDE mixing networks.</li>
+              <li>Added <code>get_global_state()</code> method tailored for CTDE mixing networks.</li>
             </ul>
           </div>
         </div>
