@@ -71,6 +71,9 @@ class QNetwork(nn.Module):
         # Output head: hidden state → Q-value per action
         self.fc_out = nn.Linear(hidden_size, act_size)
 
+        # Flatten GRU parameters for contiguous memory layout in VRAM
+        self.gru.flatten_parameters()
+
     def forward(
         self,
         obs: torch.Tensor,

@@ -200,7 +200,9 @@ class QMIXTrainer:
 
         # Always transfer Q-network weights (architecture is identical)
         self.q_net.load_state_dict(checkpoint["q_net_state"])
+        self.q_net.gru.flatten_parameters()
         self.q_net_target = copy.deepcopy(self.q_net)
+        self.q_net_target.gru.flatten_parameters()
         self.q_net_target.eval()
 
         # Mixing network: only transfer if n_agents and state_size match
