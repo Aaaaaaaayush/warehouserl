@@ -495,14 +495,22 @@ class WarehouseEnv(ParallelEnv):
         """
         H, W = self.cfg.grid.height, self.cfg.grid.width
         exclusion = set()
+        # Add 1-cell neighborhood around critical functional points to prevent bottleneck blockage
+        def add_with_neighbors(r: int, c: int):
+            for dr in (-1, 0, 1):
+                for dc in (-1, 0, 1):
+                    nr, nc = r + dr, c + dc
+                    if 0 <= nr < H and 0 <= nc < W:
+                        exclusion.add((nr, nc))
+
         for r, c in self.cfg.grid.shelves:
             exclusion.add((r, c))
         for r, c in self.cfg.grid.dispatch_points:
-            exclusion.add((r, c))
+            add_with_neighbors(r, c)
         for r, c in self.cfg.grid.charging_stations:
-            exclusion.add((r, c))
+            add_with_neighbors(r, c)
         for r, c in self.cfg.grid.agent_start_positions:
-            exclusion.add((r, c))
+            add_with_neighbors(r, c)
 
         candidates = [
             (r, c)
