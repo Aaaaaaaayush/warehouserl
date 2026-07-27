@@ -1,0 +1,16 @@
+{
+  "scenario_id": 1,
+  "scenario_name": "Single Corridor",
+  "agents": 4,
+  "grid": "8x8",
+  "episodes": 100000,
+  "transfer_from": null,
+  "final_metrics": {
+    "mean_reward": 54.777,
+    "packages_delivered": 7.234,
+    "collision_rate": 0.04424,
+    "deadlock_frequency": 0.02814,
+    "battery_events": 4.0,
+    "total_episodes": 100000
+  }
+}

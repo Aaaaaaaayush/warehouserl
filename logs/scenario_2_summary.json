@@ -1,0 +1,16 @@
+{
+  "scenario_id": 2,
+  "scenario_name": "Open Warehouse",
+  "agents": 8,
+  "grid": "12x12",
+  "episodes": 300000,
+  "transfer_from": "models\\qmix_4agents_100000episodes.pt",
+  "final_metrics": {
+    "mean_reward": 177.5915999999999,
+    "packages_delivered": 20.764,
+    "collision_rate": 0.10776666666666666,
+    "deadlock_frequency": 0.0011333333333333334,
+    "battery_events": 8.0,
+    "total_episodes": 300000
+  }
+}

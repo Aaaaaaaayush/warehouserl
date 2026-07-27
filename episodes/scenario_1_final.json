@@ -1,0 +1,2378 @@
+{
+  "version": "1.0",
+  "scenario": 1,
+  "stage": "final",
+  "grid": {
+    "width": 8,
+    "height": 8,
+    "shelves": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ]
+    ],
+    "dispatch_points": [
+      [
+        3,
+        7
+      ]
+    ],
+    "charging_stations": [
+      [
+        0,
+        7
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    "obstacles": []
+  },
+  "agents_count": 4,
+  "total_steps": 50,
+  "deliveries": 7,
+  "frames": [
+    {
+      "step": 0,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 50.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 0,
+          "battery": 50.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 1,
+          "battery": 50.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 4,
+          "col": 1,
+          "battery": 50.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 1,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 49.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 0,
+          "battery": 49.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 1,
+          "battery": 49.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 5,
+          "col": 1,
+          "battery": 49.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 2,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 48.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 0,
+          "battery": 48.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 2,
+          "col": 1,
+          "battery": 48.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 1,
+          "battery": 48.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 3,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 47.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 1,
+          "battery": 47.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 1,
+          "battery": 47.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 2,
+          "battery": 47.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 4,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 46.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 1,
+          "battery": 46.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 46.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 2,
+          "battery": 46.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 5,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 45.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 1,
+          "battery": 45.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 45.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 2,
+          "battery": 45.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 6,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 44.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 1,
+          "battery": 44.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 44.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 2,
+          "battery": 44.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 7,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 43.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 1,
+          "battery": 43.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 43.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 3,
+          "battery": 43.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 8,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 42.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 2,
+          "battery": 42.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 42.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 3,
+          "battery": 42.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          6,
+          2
+        ]
+      ]
+    },
+    {
+      "step": 9,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 41.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 2,
+          "battery": 41.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 41.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 4,
+          "battery": 41.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 10,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 40.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 3,
+          "battery": 40.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 40.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 5,
+          "battery": 40.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 11,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 39.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 4,
+          "battery": 39.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 39.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 6,
+          "battery": 39.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 12,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 38.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 4,
+          "battery": 38.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 38.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 5,
+          "col": 6,
+          "battery": 38.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 13,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 37.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 5,
+          "battery": 37.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 37.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 4,
+          "col": 6,
+          "battery": 37.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 14,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 36.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 6,
+          "battery": 36.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 36.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 6,
+          "battery": 36.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 15,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 0,
+          "battery": 35.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 6,
+          "battery": 35.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 35.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 7,
+          "battery": 35.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 16,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 1,
+          "battery": 34.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 6,
+          "battery": 34.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 34.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 7,
+          "battery": 34.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 17,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 2,
+          "col": 1,
+          "battery": 33.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 6,
+          "battery": 33.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 33.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 6,
+          "battery": 33.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 18,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 1,
+          "battery": 32.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 6,
+          "battery": 32.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 32.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 5,
+          "battery": 32.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 19,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 4,
+          "col": 1,
+          "battery": 31.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 7,
+          "battery": 31.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 31.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 4,
+          "battery": 31.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": []
+    },
+    {
+      "step": 20,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 5,
+          "col": 1,
+          "battery": 30.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 7,
+          "battery": 30.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 30.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 3,
+          "battery": 30.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 21,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 5,
+          "col": 2,
+          "battery": 29.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 6,
+          "battery": 29.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 1,
+          "battery": 29.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 2,
+          "battery": 29.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 22,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 6,
+          "col": 2,
+          "battery": 28.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 5,
+          "battery": 28.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 1,
+          "battery": 28.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 1,
+          "battery": 28.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 23,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 6,
+          "col": 3,
+          "battery": 27.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 4,
+          "battery": 27.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 2,
+          "battery": 27.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 1,
+          "battery": 27.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 24,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 6,
+          "col": 3,
+          "battery": 26.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 4,
+          "battery": 26.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 3,
+          "battery": 26.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 2,
+          "battery": 26.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ]
+    },
+    {
+      "step": 25,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 6,
+          "col": 4,
+          "battery": 25.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 4,
+          "battery": 25.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 4,
+          "battery": 25.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 2,
+          "battery": 25.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ]
+    },
+    {
+      "step": 26,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 6,
+          "col": 4,
+          "battery": 24.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 4,
+          "battery": 24.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 5,
+          "battery": 24.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 1,
+          "col": 2,
+          "battery": 24.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ]
+    },
+    {
+      "step": 27,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 6,
+          "col": 5,
+          "battery": 23.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 4,
+          "battery": 23.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 2,
+          "col": 5,
+          "battery": 23.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 1,
+          "col": 3,
+          "battery": 23.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ]
+    },
+    {
+      "step": 28,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 6,
+          "col": 5,
+          "battery": 22.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 3,
+          "battery": 22.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 2,
+          "col": 6,
+          "battery": 22.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 1,
+          "col": 3,
+          "battery": 22.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ]
+    },
+    {
+      "step": 29,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 6,
+          "col": 6,
+          "battery": 21.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 2,
+          "battery": 21.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 6,
+          "battery": 21.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 3,
+          "battery": 21.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ]
+    },
+    {
+      "step": 30,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 5,
+          "col": 6,
+          "battery": 20.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 2,
+          "battery": 20.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 7,
+          "battery": 20.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 4,
+          "battery": 20.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ]
+      ]
+    },
+    {
+      "step": 31,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 4,
+          "col": 6,
+          "battery": 19.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 2,
+          "battery": 19.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 7,
+          "battery": 19.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 5,
+          "battery": 19.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 32,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 4,
+          "col": 6,
+          "battery": 18.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 3,
+          "battery": 18.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 6,
+          "battery": 18.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 6,
+          "battery": 18.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 33,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 6,
+          "battery": 17.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 4,
+          "battery": 17.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 5,
+          "battery": 17.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 6,
+          "battery": 17.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 34,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 7,
+          "battery": 16.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 5,
+          "battery": 16.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 4,
+          "battery": 16.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 6,
+          "battery": 16.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 35,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 7,
+          "battery": 15.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 6,
+          "col": 6,
+          "battery": 15.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 3,
+          "battery": 15.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 6,
+          "battery": 15.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 36,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 6,
+          "battery": 14.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 5,
+          "col": 6,
+          "battery": 14.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 2,
+          "col": 3,
+          "battery": 14.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 2,
+          "col": 6,
+          "battery": 14.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 37,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 5,
+          "battery": 13.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 6,
+          "battery": 13.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 3,
+          "battery": 13.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 6,
+          "battery": 13.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 38,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 4,
+          "battery": 12.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 6,
+          "battery": 12.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 3,
+          "battery": 12.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 7,
+          "battery": 12.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 39,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 3,
+          "battery": 11.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 6,
+          "battery": 11.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 4,
+          "battery": 11.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 7,
+          "battery": 11.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 40,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 2,
+          "col": 3,
+          "battery": 10.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 4,
+          "col": 6,
+          "battery": 10.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 1,
+          "col": 5,
+          "battery": 10.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 6,
+          "battery": 10.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 41,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 2,
+          "col": 2,
+          "battery": 9.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 6,
+          "battery": 9.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 2,
+          "col": 5,
+          "battery": 9.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 5,
+          "battery": 9.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 42,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 1,
+          "col": 2,
+          "battery": 8.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 7,
+          "battery": 8.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 2,
+          "col": 6,
+          "battery": 8.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 4,
+          "battery": 8.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 43,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 1,
+          "col": 2,
+          "battery": 7.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 7,
+          "battery": 7.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 2,
+          "col": 6,
+          "battery": 7.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 3,
+          "battery": 7.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 44,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 1,
+          "col": 3,
+          "battery": 6.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 6,
+          "battery": 6.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 2,
+          "col": 6,
+          "battery": 6.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 3,
+          "col": 2,
+          "battery": 6.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "step": 45,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 1,
+          "col": 4,
+          "battery": 5.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 5,
+          "battery": 5.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 6,
+          "battery": 5.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 4,
+          "col": 2,
+          "battery": 5.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 46,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 1,
+          "col": 5,
+          "battery": 4.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 4,
+          "battery": 4.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 7,
+          "battery": 4.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 5,
+          "col": 2,
+          "battery": 4.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 47,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 1,
+          "col": 6,
+          "battery": 3.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 3,
+          "col": 3,
+          "battery": 3.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 7,
+          "battery": 3.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 2,
+          "battery": 3.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 48,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 2,
+          "col": 6,
+          "battery": 2.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 2,
+          "col": 3,
+          "battery": 2.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 6,
+          "battery": 2.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 1,
+          "battery": 2.0,
+          "carrying": false,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    },
+    {
+      "step": 49,
+      "agents": [
+        {
+          "id": "agent_0",
+          "row": 3,
+          "col": 6,
+          "battery": 1.0,
+          "carrying": true,
+          "frozen": false
+        },
+        {
+          "id": "agent_1",
+          "row": 1,
+          "col": 3,
+          "battery": 1.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_2",
+          "row": 3,
+          "col": 5,
+          "battery": 1.0,
+          "carrying": false,
+          "frozen": false
+        },
+        {
+          "id": "agent_3",
+          "row": 6,
+          "col": 1,
+          "battery": 1.0,
+          "carrying": true,
+          "frozen": false
+        }
+      ],
+      "items_on_shelves": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          6,
+          3
+        ]
+      ]
+    }
+  ]
+}
