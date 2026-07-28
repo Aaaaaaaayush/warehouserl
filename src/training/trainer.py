@@ -198,8 +198,22 @@ class QMIXTrainer:
         """
         checkpoint = torch.load(path, map_location=self.device)
 
-        # Always transfer Q-network weights (architecture is identical)
-        self.q_net.load_state_dict(checkpoint["q_net_state"])
+        # Always transfer Q-network weights (handles shape growth e.g. obs 31 -> 43)
+        q_state = checkpoint["q_net_state"]
+        curr_state = self.q_net.state_dict()
+
+        if q_state["fc_input.weight"].shape != curr_state["fc_input.weight"].shape:
+            ckpt_obs = q_state["fc_input.weight"].shape[1]
+            print(f"  [Trainer] Partial weight transfer for fc_input: prior obs={ckpt_obs} -> current obs={self._obs_size}")
+            curr_state["fc_input.weight"][:, :ckpt_obs] = q_state["fc_input.weight"]
+            curr_state["fc_input.bias"] = q_state["fc_input.bias"]
+            for k in list(q_state.keys()):
+                if k not in ("fc_input.weight", "fc_input.bias"):
+                    curr_state[k] = q_state[k]
+            self.q_net.load_state_dict(curr_state)
+        else:
+            self.q_net.load_state_dict(q_state)
+
         self.q_net.gru.flatten_parameters()
         self.q_net_target = copy.deepcopy(self.q_net)
         self.q_net_target.gru.flatten_parameters()
@@ -215,7 +229,7 @@ class QMIXTrainer:
             print(
                 f"  [Trainer] Mixing network NOT transferred: "
                 f"prior({checkpoint['n_agents']} agents, state={checkpoint['state_size']}) "
-                f"→ current({self._n_agents} agents, state={self._state_size}). "
+                f"-> current({self._n_agents} agents, state={self._state_size}). "
                 f"QNetwork weights transferred only."
             )
 
