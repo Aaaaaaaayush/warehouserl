@@ -1,0 +1,42 @@
+{
+  "scenario_id": 3,
+  "heatmap_path": "logs\\heatmap_scenario_3.png",
+  "behaviors": {
+    "lane_formation": {
+      "detected": true,
+      "score": 0.468,
+      "description": "Agents spontaneously organize into opposite directional lanes in narrow corridors to minimize head-on collisions.",
+      "details": {
+        "score": 0.4676559132710049,
+        "dominant_lanes": 5
+      }
+    },
+    "turn_taking": {
+      "detected": true,
+      "score": 1.0,
+      "description": "Agents pause or yield at corridor entrances when an oncoming agent is detected inside the bottleneck.",
+      "details": {
+        "score": 1.0,
+        "stay_ratio": 0.696
+      }
+    },
+    "role_specialisation": {
+      "detected": true,
+      "score": 0.381,
+      "description": "Agents divide labor: specific agents specialize as primary haulers while others clear bottlenecks or manage charging.",
+      "details": {
+        "score": 0.38055877100218294,
+        "std_dev": 0.127
+      }
+    },
+    "convoy_behavior": {
+      "detected": false,
+      "score": 0.024,
+      "description": "Agents form single-file platoons following identical trajectories to move efficiently through high-density zones.",
+      "details": {
+        "score": 0.0241,
+        "convoy_frame_ratio": 0.012
+      }
+    }
+  }
+}
