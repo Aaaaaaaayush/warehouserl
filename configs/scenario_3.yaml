@@ -117,8 +117,8 @@ training:
   lr: 0.0003                     # Slightly lower LR — fine-tuning from S2 weights
   gamma: 0.99
   epsilon_start: 0.3             # Start even lower — weights transferred from S2
-  epsilon_min: 0.05
-  epsilon_anneal_fraction: 0.5
+  epsilon_min: 0.10              # Retain 10% exploration noise for 12-agent dynamic wall routing
+  epsilon_anneal_fraction: 0.4
   target_update_interval: 200
   train_every_n_episodes: 1
   gradient_clip_norm: 10.0
@@ -128,18 +128,18 @@ training:
 
 # --- Rewards ---
 rewards:
-  delivery_reward: 10.0
-  pick_up_reward: 1.0
-  collision_penalty: -2.0
+  delivery_reward: 12.0
+  pick_up_reward: 1.5
+  collision_penalty: -4.0        # Higher penalty to break multi-agent traffic jams
   step_penalty: -0.01
   battery_empty_penalty: -5.0
   charge_reward: 0.5
-  dispatch_balance_bonus: 0.3
-  # Scenario 3 addition: small bonus for agents maintaining distance from
+  dispatch_balance_bonus: 0.5
+  # Scenario 3 addition: bonus for agents maintaining distance from
   # each other while moving — discourages clustering, encourages spread.
-  spacing_bonus: 0.1
+  spacing_bonus: 0.5
   # Scenario 3 addition: throughput bonus for delivering N packages in
   # M consecutive steps — rewards sustained high performance, not lucky bursts.
-  throughput_streak_bonus: 2.0
+  throughput_streak_bonus: 2.5
   throughput_streak_window: 20   # Steps over which streak is measured
   throughput_streak_threshold: 3 # Deliveries needed within window

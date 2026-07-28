@@ -83,7 +83,7 @@ class TestObservationSpace:
     def test_obs_shape_all_scenarios(self, env_and_cfg):
         env, cfg, obs, _ = env_and_cfg
         radius = cfg.agents.observation_radius
-        expected = (2 * radius + 1) ** 2 + 6   # 25 + 6 = 31
+        expected = (2 * radius + 1) ** 2 + 6 + 12   # 25 + 6 + 12 = 43
         for agent_id, o in obs.items():
             assert o.shape == (expected,), (
                 f"Scenario {cfg.scenario.id}: {agent_id} obs shape {o.shape} "

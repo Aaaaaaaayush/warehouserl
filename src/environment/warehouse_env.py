@@ -132,8 +132,8 @@ class WarehouseEnv(ParallelEnv):
         # After reset(), active agents = possible_agents (none start frozen)
         self.agents: list[str] = []
 
-        # Observation space: 25 grid cells + 6 state values
-        obs_size = (2 * cfg.agents.observation_radius + 1) ** 2 + 6
+        # Observation space: 25 grid cells + 6 state values + 12 one-hot agent ID slots = 43 floats
+        obs_size = (2 * cfg.agents.observation_radius + 1) ** 2 + 6 + 12
         self._obs_space = gym.spaces.Box(
             low=0.0, high=float(max(CellType)),
             shape=(obs_size,), dtype=np.float32
@@ -335,7 +335,13 @@ class WarehouseEnv(ParallelEnv):
             state.target_col / W if state.target_col >= 0 else -1.0,
         ], dtype=np.float32)
 
-        return np.concatenate([grid_flat, state_vec])
+        # One-hot Agent ID embedding (fixed 12 slots for all scenarios)
+        agent_idx = int(agent_id.split("_")[1])
+        one_hot_id = np.zeros(12, dtype=np.float32)
+        if agent_idx < 12:
+            one_hot_id[agent_idx] = 1.0
+
+        return np.concatenate([grid_flat, state_vec, one_hot_id])
 
     def _resolve_movement(
         self,

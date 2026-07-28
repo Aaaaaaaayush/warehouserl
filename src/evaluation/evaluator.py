@@ -56,22 +56,30 @@ class Evaluator:
         self.env = WarehouseEnv(cfg)
         sample_obs, _ = self.env.reset()
         self.obs_size = list(sample_obs.values())[0].shape[0]
+
+        # Inspect checkpoint to determine saved obs_size
+        ckpt_obs_size = self.obs_size
+        if self.checkpoint_path.exists():
+            ckpt = torch.load(self.checkpoint_path, map_location=device)
+            ckpt_obs_size = ckpt.get("obs_size", self.obs_size)
+
         self.act_size = 7
         self.hidden_size = cfg.training.hidden_size
 
-        # Load Q-network weights
+        # Load Q-network weights with matching obs_size
         self.q_net = QNetwork(
-            obs_size=self.obs_size,
+            obs_size=ckpt_obs_size,
             act_size=self.act_size,
             hidden_size=self.hidden_size,
         ).to(device)
 
         if self.checkpoint_path.exists():
-            ckpt = torch.load(self.checkpoint_path, map_location=device)
             self.q_net.load_state_dict(ckpt["q_net_state"])
             self.q_net.eval()
         else:
             raise FileNotFoundError(f"Checkpoint not found: {self.checkpoint_path}")
+
+        self._ckpt_obs_size = ckpt_obs_size
 
     def evaluate(self, n_episodes: int = 100) -> tuple[dict[str, float], list[dict]]:
         """
@@ -153,8 +161,9 @@ class Evaluator:
                             actions[a_id] = Action.STAY
                             continue
 
+                        raw_ob = obs_t[a_id][:self._ckpt_obs_size]
                         ob = torch.tensor(
-                            obs_t[a_id], dtype=torch.float32, device=self.device
+                            raw_ob, dtype=torch.float32, device=self.device
                         ).unsqueeze(0)
                         q_vals, new_h = self.q_net(ob, hidden[a_id])
                         hidden[a_id] = new_h
