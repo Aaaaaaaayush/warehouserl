@@ -29,7 +29,7 @@ RUN pip install --no-cache-dir fastapi uvicorn pyyaml pydantic numpy jinja2 http
 # Copy source code and pre-computed visualizer artifacts
 COPY src/ src/
 COPY configs/ configs/
-COPY public/ public/
+COPY frontend/ frontend/
 COPY logs/ logs/
 COPY episodes/ episodes/
 COPY videos/ videos/
