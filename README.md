@@ -8,9 +8,6 @@
 [![Hardware](https://img.shields.io/badge/Hardware-NVIDIA_RTX_5080-76b900.svg)]()
 [![Live Demo](https://img.shields.io/badge/Live_Demo-warehouserl.onrender.com-brightgreen)](https://warehouserl.onrender.com)
 
-> **MSc Machine Learning Portfolio Project**  
-> *Targeted for MSc Artificial Intelligence & Data Science Applications (TUM / TU Berlin)*
-
 ---
 
 ## Executive Summary
