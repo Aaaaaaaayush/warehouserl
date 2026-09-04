@@ -5,8 +5,7 @@
 [![PettingZoo Parallel API](https://img.shields.io/badge/PettingZoo-Parallel_API-green.svg)](https://pettingzoo.farama.org/)
 [![FastAPI Backend](https://img.shields.io/badge/FastAPI-0.109-009688.svg)](https://fastapi.tiangolo.com/)
 [![Tests Passing](https://img.shields.io/badge/tests-62%2F62%20passing-brightgreen.svg)]()
-[![Hardware](https://img.shields.io/badge/Hardware-NVIDIA_RTX_5080-76b900.svg)]()
-[![Live Demo](https://img.shields.io/badge/Live_Demo-warehouserl.onrender.com-brightgreen)](https://warehouserl.onrender.com)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-warehouserl--live.duckdns.org-brightgreen?logo=nginx)](https://warehouserl-live.duckdns.org)
 
 ---
 

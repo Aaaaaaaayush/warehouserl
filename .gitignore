@@ -19,8 +19,12 @@ models/*.pth
 
 # ── MLflow local database & experiment runs ─────────────────
 mlflow.db
+mlflow.db*
 mlruns/
 .mlflow/
+*.sqlite
+*.sqlite3
+*.db
 
 # ── IDE and OS files ─────────────────────────────────────────
 .vscode/
